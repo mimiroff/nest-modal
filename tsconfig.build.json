@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules",
+    ".nuxt",
+    "dist",
+    "test",
+    "**/*spec.ts"],
+  "include": ["server/**/*"]
+}
