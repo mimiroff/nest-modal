@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "lib": [
-      "ESNext",
-      "ESNext.AsyncIterable",
-      "DOM"
-    ],
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
     "importHelpers": true,
     "module": "commonjs",
@@ -19,22 +15,10 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "types": [
-      "@types/node",
-      "@nuxt/types",
-      "@types/jest"
-    ],
+    "types": ["@types/node", "@nuxt/types", "@types/jest", "@nuxtjs/auth-next"],
     "paths": {
-      "~/*": [
-        "./client/*"
-      ]
+      "~/*": ["./client/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist",
-    "test",
-    "**/*spec.ts"
-  ]
+  "exclude": ["node_modules", ".nuxt", "dist", "test", "**/*spec.ts"]
 }

@@ -17,6 +17,7 @@ enum schema {
   DB_NAME = 'DB_NAME',
   DB_USER = 'DB_USER',
   DB_PASSWORD = 'DB_PASSWORD',
+  JWT_SECRET = 'JWT_SECRET',
 }
 
 class Config {
@@ -28,6 +29,7 @@ class Config {
   DB_NAME: string;
   DB_USER: string;
   DB_PASSWORD: string;
+  JWT_SECRET: string;
 }
 
 let config: Config;
@@ -41,6 +43,7 @@ function loadEnvironmentVariables(env) {
   config.DB_NAME = env.DB_NAME;
   config.DB_USER = env.DB_USER;
   config.DB_PASSWORD = env.DB_PASSWORD;
+  config.JWT_SECRET = env.JWT_SECRET;
 }
 
 function pickEnvironmentVariables() {
