@@ -4,8 +4,14 @@
 $ npm ci
 ```
 
-## Running the app
+## Copy Env variables
+### only in local
 
+```
+$ cp .env.example .env
+```
+
+## Running the app
 ### Start Database
 
 ```
