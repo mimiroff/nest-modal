@@ -1,0 +1,11 @@
+version: '2'
+services:
+  db:
+    container_name: mysql-nest-modal
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=nest-modal
+    ports:
+      - 0.0.0.0:3306:3306

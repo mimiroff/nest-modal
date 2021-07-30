@@ -1,7 +1,9 @@
 import { NuxtConfig } from '@nuxt/types';
 
-// TODO switch to .env
-const isDev = true;
+import { getConfig, NodeEnvironment } from './server/config';
+
+const conf = getConfig();
+const isDev = conf.NODE_ENV === NodeEnvironment.Development;
 
 const config: NuxtConfig = {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -28,7 +30,7 @@ const config: NuxtConfig = {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: '~/plugins/axios-accessor.ts', ssr: true },],
+  plugins: [{ src: '~/plugins/axios-accessor.ts', ssr: true }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -49,8 +51,7 @@ const config: NuxtConfig = {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    // TODO switch to .env
-    baseURL: 'http://localhost:3000',
+    baseURL: conf.APP_DOMAIN,
   },
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
