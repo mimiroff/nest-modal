@@ -168,7 +168,7 @@ export default {
         this.isLoading = true;
         const { email, firstName, lastName, password } = this;
         await axios.post('api/users', { email, firstName, lastName, password });
-        this.goToLogIn();
+        await this.$auth.loginWith('local', { data: { email, password } });
       } catch (ex) {
         console.error(ex);
       } finally {

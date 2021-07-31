@@ -48,6 +48,17 @@ export const patch = async (url: string, payload?: any) => {
   );
 };
 
+export const del = async (url: string, payload?: any) => {
+  return validateResponse(
+    await $axios({
+      url,
+      method: 'DELETE',
+      data: JSON.stringify(payload),
+      ...defaultConfig,
+    }),
+  );
+};
+
 export const postFile = async (url, data: FormData) => {
   return validateResponse(
     await $axios({
